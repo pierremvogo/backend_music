@@ -1,0 +1,15 @@
+{
+  "REQUIRED_FIELD": "title, userId and coverUrl are required",
+  "SINGLE_ALREADY_EXIST": "single already exists",
+  "ERROR_CREATED_SINGLE": "Error occurred when creating single",
+  "SUCCESSFULLY_CREATED_SINGLE": "Single created successfully",
+  "NO_USER_FOUND": "No User Found",
+  "SINGLE_NOT_FOUND": "Single Not found",
+  "SUCCESSFULLY_GET_ALL_SINGLE": "Successfully get all single",
+  "SUCCESSFULLY_GET_SINGLE": "Successfully get single",
+  "NO_SINGLE_ID_GIVEN": "No Single Id given",
+  "USER_NOT_FOUND": "User not found with the given ID.",
+  "SUCCESSFULLY_RETRIEVED_SINGLE_FOR_USER": "Successfully retrieved all singles for this artist.",
+  "SUCCESSFULLY_DELETE_SINGLE": "Single deleted successfully.",
+  "NO_RELEASE_ID_GIVEN": "No Release Id given"
+}

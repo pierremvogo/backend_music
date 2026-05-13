@@ -1,0 +1,21 @@
+model TrackStream {
+  id        String   @id @default(cuid()) @db.VarChar(32)
+
+  trackId   String   @map("track_id") @db.VarChar(32)
+  userId    String   @map("user_id") @db.VarChar(32)
+
+  ipAddress String?  @map("ip_address") @db.VarChar(255)
+  country   String?  @db.VarChar(255)
+  city      String?  @db.VarChar(255)
+  device    String?  @db.VarChar(255)
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  track     Track    @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([trackId], map: "track_streams_track_id_idx")
+  @@index([userId], map: "track_streams_user_id_idx")
+  @@index([createdAt], map: "track_streams_created_at_idx")
+  @@map("track_streams")
+}

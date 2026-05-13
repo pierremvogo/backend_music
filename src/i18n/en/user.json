@@ -1,0 +1,15 @@
+{
+  "EMAIL_IS_REQUIRED": "Email is required.",
+  "SUCCESSFULLY_RETRIEVED_ARTISTS": "Successfully retrieved artists list",
+  "USER_NOT_FOUND": "User not found",
+  "SUCCESSFULLY_GET_USER_BY_EMAIL": "Successfully get User By Email",
+  "NO_USER_ID_GIVEN": "No user ID given.",
+  "SUCCESSFULLY_GET_USER_BY_ID": "Successfully get User By Id",
+  "SUCCESSFULLY_GET_ARTIST_LIST": "Successfully retrieved artists list",
+  "SUCCESSFULLY_GET_ALL_USER": "Successfully got all users",
+  "OLD_PASSWORD_REQUIRED": "Old password is required to change the password.",
+  "OLD_PASSWORD_INCORRECT": "Old password is incorrect.",
+  "USER_SUCCESSFULLY_UPDATED": "User Info successfully updated",
+  "USER_SUCCESSFULLY_DELETED": "User successfully deleted.",
+  "SUCCESSFULLY_GET_USER_BY_ROLE": "Successfully get Users By Role"
+}

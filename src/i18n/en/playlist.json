@@ -1,0 +1,14 @@
+{
+  "PLAYLIST_ALREADY_EXIST": "An playlist with this name already exists",
+  "ERROR_CREATED_PLAYLIST": "Error occurred when creating playlist",
+  "SUCCESSFULLY_CREATED_PLAYLIST": "Playlist created successfully",
+  "NO_PLAYLIST_FOUND": "No Playlist Found",
+  "PLAYLIST_NOT_FOUND": "Playlist Not found",
+  "SUCCESSFULLY_GET_ALL_PLAYLIST": "Successfully get all playlist",
+  "SUCCESSFULLY_GET_PLAYLIST": "Successfully get playlist",
+  "NO_PLAYLIST_ID_GIVEN": "No Playlist Id given",
+  "PLAYLIST_NAME_REQUIRED": "Playlist name is required for update.",
+  "PLAYLIST_SUCCESSFULLY_UPDATED": "Playlist updated successfully.",
+  "SUCCESSFULLY_DELETED_PLAYLIST": "Playlist deleted successfully.",
+  "NO_USER_FOUND": "No User Found"
+}

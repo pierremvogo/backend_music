@@ -1,0 +1,10 @@
+model Tester {
+  id        String   @id @db.VarChar(32)
+  name      String   @db.VarChar(256)
+  email     String   @db.VarChar(256)
+  ageRange  String   @db.VarChar(16)
+  language  String   @db.VarChar(32)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("testers")
+}

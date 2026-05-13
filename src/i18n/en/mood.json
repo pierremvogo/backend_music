@@ -1,0 +1,13 @@
+{
+  "MOOD_ALREADY_EXIST": "An mood with this name already exists",
+  "ERROR_CREATED_MOOD": "Error occurred when creating mood",
+  "SUCCESSFULLY_CREATED_MOOD": "Mood created successfully",
+  "NO_MOOD_FOUND": "No Mood Found",
+  "MOOD_NOT_FOUND": "Mood Not found",
+  "SUCCESSFULLY_GET_ALL_MOOD": "Successfully get all mood",
+  "SUCCESSFULLY_GET_MOOD": "Successfully get mood",
+  "NO_MOOD_ID_GIVEN": "No Mood Id given",
+  "MOOD_NAME_REQUIRED": "Mood name is required for update.",
+  "MOOD_SUCCESSFULLY_UPDATED": "Mood updated successfully.",
+  "SUCCESSFULLY_DELETED_MOOD": "Mood deleted successfully."
+}

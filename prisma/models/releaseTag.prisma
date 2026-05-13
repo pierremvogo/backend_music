@@ -1,0 +1,15 @@
+model ReleaseTag {
+  id        String   @id @default(cuid()) @db.VarChar(32)
+
+  releaseId   String   @map("release_id") @db.VarChar(32)
+  tagId     String   @map("tag_id") @db.VarChar(32)
+
+  release     Release    @relation("release_tag",fields: [releaseId], references: [id], onDelete: Cascade)
+  tag         Tag        @relation("tag",fields: [tagId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([releaseId, tagId], map: "release_tag_unique_idx")
+  @@map("release_tags")
+}

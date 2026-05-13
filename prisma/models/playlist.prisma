@@ -1,0 +1,16 @@
+
+model Playlist {
+  id             String          @id @default(cuid()) @db.VarChar(32)
+  nom            String          @db.VarChar(256)
+  slug           String          @unique(map: "playlist_slug_idx") @db.VarChar(256)
+
+  userId         String          @map("user_id") @db.VarChar(32)
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  trackPlayLists TrackPlayList[] @relation("playlist")
+
+  createdAt      DateTime        @default(now()) @map("created_at")
+  updatedAt      DateTime        @updatedAt @map("updated_at")
+
+  @@map("playlists")
+}

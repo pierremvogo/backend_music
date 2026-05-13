@@ -1,0 +1,16 @@
+{
+  "REQUIRED_FIELD": "title, userId and coverUrl are required",
+  "RELEASE_ALREADY_EXIST": "An release with this name already exists",
+  "ERROR_CREATED_RELEASE": "Error occurred when creating release",
+  "SUCCESSFULLY_CREATED_RELEASE": "Release created successfully",
+  "NO_USER_FOUND": "No User Found",
+  "RELEASE_NOT_FOUND": "Release Not found",
+  "SUCCESSFULLY_GET_ALL_RELEASE": "Successfully get all release",
+  "SUCCESSFULLY_GET_RELEASE": "Successfully get release",
+  "NO_RELEASE_ID_GIVEN": "No Release Id given",
+  "USER_NOT_FOUND": "User not found with the given ID.",
+  "SUCCESSFULLY_RETRIEVED_RELEASE_FOR_USER": "Successfully retrieved all releases for this artist.",
+  "SUCCESSFULLY_DELETED_RELEASE": "Release deleted successfully.",
+  "ARTIST_ALREADY_HAS_RELEASE": "This artist already has a release with the same title",
+  "TITLE_RELEASE": "Release title already in use"
+}

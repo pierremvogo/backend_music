@@ -1,0 +1,15 @@
+model TrackRelease {
+  id        String   @id @default(cuid()) @db.VarChar(32)
+
+  trackId   String   @map("track_id") @db.VarChar(32)
+  releaseId String   @map("release_id") @db.VarChar(32)
+
+  track     Track    @relation("track", fields: [trackId], references: [id])
+  release   Release  @relation("release_track", fields: [releaseId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([trackId, releaseId], map: "track_release_unique")
+  @@map("track_releases")
+}

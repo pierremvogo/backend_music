@@ -1,0 +1,10 @@
+model Subscription {
+  id                   String   @id @default(cuid())
+  userId               String   @unique
+  stripeSubscriptionId String   @unique
+  status               String
+  endsAt               DateTime?
+  createdAt            DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id])
+}

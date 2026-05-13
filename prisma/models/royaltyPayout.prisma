@@ -1,0 +1,18 @@
+model RoyaltyPayout {
+  id        String   @id @db.VarChar(32)
+  artistId  String   @map("artist_id") @db.VarChar(32)
+
+  amount    Decimal  @db.Decimal(10, 2)
+  currency  String   @default("EUR") @db.VarChar(10)
+  status    String   @default("paid") @db.VarChar(20)
+
+  paidAt    DateTime? @map("paid_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  artist    User     @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId], map: "royalty_payouts_artist_id_idx")
+  @@index([status], map: "royalty_payouts_status_idx")
+  @@index([createdAt], map: "royalty_payouts_created_at_idx")
+  @@map("royalty_payouts")
+}

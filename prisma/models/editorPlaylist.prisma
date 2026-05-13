@@ -1,0 +1,34 @@
+enum CURATION {
+  MANUAL
+  ALGORITHMIC
+  HYBRID
+}
+model EditorPlaylist {
+  id             String   @id @default(cuid()) @db.VarChar(32)
+
+  name            String   @db.VarChar(256)
+  slug            String          @unique(map: "editor_playlist_slug_idx") @db.VarChar(256)
+  description     String?    @db.VarChar(256)
+  coverImageUrl        String  @map("cover_image_url") @db.VarChar(2048)
+  bannerImageUrl        String?  @map("banner_image_url") @db.VarChar(2048)
+
+  locale          String   @default("en") @db.VarChar(16)
+  isFeatured      Boolean  @default(false) @map("is_featured")
+  isPublished     Boolean  @default(false) @map("is_published")
+  priority        Int?      @default(0)
+  genre           String?    @db.VarChar(256)
+  country         String?    @db.VarChar(256)
+  targetAudience  String?    @db.VarChar(256)
+  curationType    CURATION   @default(MANUAL)
+
+  createdByUserId String  @map("created_by_user_id") @db.VarChar(32)
+
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  tracks          EditorPlaylistTrack[]
+  createdBy       User    @relation(fields: [createdByUserId], references: [id])
+
+  @@index([isPublished], map: "editor_playlist_published_idx")
+  @@map("editor_playlists")
+}

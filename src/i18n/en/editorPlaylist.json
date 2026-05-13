@@ -1,0 +1,14 @@
+{
+  "EDITORPLAYLIST_ALREADY_EXIST": "An playlist with this name already exists",
+  "ERROR_CREATED_EDITORPLAYLIST": "Error occurred when creating playlist",
+  "SUCCESSFULLY_CREATED_EDITORPLAYLIST": "editorPlaylist created successfully",
+  "NO_EDITORPLAYLIST_FOUND": "No editorPlaylist Found",
+  "EDITORPLAYLIST_NOT_FOUND": "editorPlaylist Not found",
+  "SUCCESSFULLY_GET_ALL_EDITORPLAYLIST": "Successfully get all playlist",
+  "SUCCESSFULLY_GET_EDITORPLAYLIST": "Successfully get playlist",
+  "NO_EDITORPLAYLIST_ID_GIVEN": "No editorPlaylist Id given",
+  "EDITORPLAYLIST_NAME_REQUIRED": "editorPlaylist name is required for update.",
+  "EDITORPLAYLIST_SUCCESSFULLY_UPDATED": "editorPlaylist updated successfully.",
+  "SUCCESSFULLY_DELETED_EDITORPLAYLIST": "editorPlaylist deleted successfully.",
+  "NO_USER_FOUND": "No User Found"
+}

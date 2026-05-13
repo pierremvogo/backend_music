@@ -1,0 +1,26 @@
+model Single {
+  id                       String   @id @default(cuid()) @db.VarChar(32)
+
+  authors                 String  @db.VarChar(512)
+  producers               String  @db.VarChar(512)
+  lyricists               String  @db.VarChar(512)
+
+  musiciansVocals         String?  @map("musicians_vocals") @db.VarChar(512)
+  musiciansPianoKeyboards String?  @map("musicians_piano_keyboards") @db.VarChar(512)
+  musiciansWinds          String?  @map("musicians_winds") @db.VarChar(512)
+  musiciansPercussion     String?  @map("musicians_percussion") @db.VarChar(512)
+  musiciansStrings        String?  @map("musicians_strings") @db.VarChar(512)
+
+  mixingEngineer          String?  @map("mixing_engineer") @db.VarChar(512)
+  masteringEngineer       String?  @map("mastering_engineer") @db.VarChar(512)
+
+  releaseId                String  @map("release_id") @unique @db.VarChar(32)
+
+  createdAt               DateTime @default(now()) @map("created_at")
+  updatedAt               DateTime @updatedAt @map("updated_at")
+
+
+  release                 Release   @relation(fields: [releaseId], references: [id], onDelete: Cascade)
+
+  @@map("singles")
+}

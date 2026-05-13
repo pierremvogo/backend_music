@@ -1,0 +1,12 @@
+{
+  "ORDER_ALREADY_EXIST": "Order already exists",
+  "ERROR_CREATED_ORDER": "Error occurred when creating order",
+  "SUCCESSFULLY_CREATED_ORDER": "Order created successfully",
+  "NO_ORDER_FOUND": "No Order Found",
+  "ORDER_NOT_FOUND": "Order Not found",
+  "SUCCESSFULLY_GET_ALL_ORDER": "Successfully get all order",
+  "SUCCESSFULLY_GET_ORDER": "Successfully get order",
+  "NO_ORDER_ID_GIVEN": "No Order Id given",
+  "ORDER_SUCCESSFULLY_UPDATED": "Order updated successfully.",
+  "SUCCESSFULLY_DELETED_ORDER": "Order deleted successfully."
+}

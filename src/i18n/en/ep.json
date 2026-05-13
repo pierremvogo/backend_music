@@ -1,0 +1,15 @@
+{
+  "REQUIRED_FIELD": "title, userId and coverUrl are required",
+  "EP_ALREADY_EXIST": "ep already exists",
+  "ERROR_CREATED_EP": "Error occurred when creating ep",
+  "SUCCESSFULLY_CREATED_EP": "Ep created successfully",
+  "NO_USER_FOUND": "No User Found",
+  "EP_NOT_FOUND": "Ep Not found",
+  "SUCCESSFULLY_GET_ALL_EP": "Successfully get all ep",
+  "SUCCESSFULLY_GET_EP": "Successfully get ep",
+  "NO_EP_ID_GIVEN": "No Ep Id given",
+  "USER_NOT_FOUND": "User not found with the given ID.",
+  "SUCCESSFULLY_RETRIEVED_EP_FOR_USER": "Successfully retrieved all eps for this artist.",
+  "SUCCESSFULLY_DELETE_EP": "Ep deleted successfully.",
+  "NO_RELEASE_ID_GIVEN": "No Release Id given"
+}

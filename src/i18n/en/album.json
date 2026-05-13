@@ -1,0 +1,15 @@
+{
+  "REQUIRED_FIELD": "title, userId and coverUrl are required",
+  "ALBUM_ALREADY_EXIST": "album already exists",
+  "ERROR_CREATED_ALBUM": "Error occurred when creating album",
+  "SUCCESSFULLY_CREATED_ALBUM": "Album created successfully",
+  "NO_USER_FOUND": "No User Found",
+  "ALBUM_NOT_FOUND": "Album Not found",
+  "SUCCESSFULLY_GET_ALL_ALBUM": "Successfully get all album",
+  "SUCCESSFULLY_GET_ALBUM": "Successfully get album",
+  "NO_ALBUM_ID_GIVEN": "No Album Id given",
+  "USER_NOT_FOUND": "User not found with the given ID.",
+  "SUCCESSFULLY_RETRIEVED_ALBUM_FOR_USER": "Successfully retrieved all albums for this artist.",
+  "SUCCESSFULLY_DELETE_ALBUM": "Album deleted successfully.",
+  "NO_RELEASE_ID_GIVEN": "No Release Id given"
+}

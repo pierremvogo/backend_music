@@ -1,0 +1,18 @@
+model EditorPlaylistTrack {
+  id               String   @id @default(cuid()) @db.VarChar(32)
+  editorPlaylistId String   @map("editor_playlist_id") @db.VarChar(32)
+  trackId          String   @map("track_id") @db.VarChar(32)
+
+  position         Int      @default(0)
+  createdAt        DateTime @default(now()) @map("created_at")
+  addedByEditorId  String   @map("added_by_editor_id") @db.VarChar(32)
+
+  playlist         EditorPlaylist @relation(fields: [editorPlaylistId], references: [id], onDelete: Cascade)
+  track            Track          @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  addedBy          User           @relation(fields: [addedByEditorId], references: [id])
+
+  @@unique([editorPlaylistId, trackId], map: "editor_playlist_track_unique")
+  @@index([editorPlaylistId], map: "editor_playlist_tracks_playlist_idx")
+  @@index([position], map: "editor_playlist_tracks_position_idx")
+  @@map("editor_playlist_tracks")
+}

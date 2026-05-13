@@ -1,0 +1,38 @@
+model Track {
+  id                   String          @id @default(cuid()) @db.VarChar(32)
+
+  isrcCode             String          @map("isrc_code") @db.VarChar(256)
+  title                String         @db.VarChar(256)
+  slug                 String          @db.VarChar(256)
+
+  userId               String         @map("user_id") @db.VarChar(32)
+  user                 User?           @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  duration             Float          
+
+  moodId               String          @map("mood_id") @db.VarChar(32)
+  mood                 Mood            @relation(fields: [moodId], references: [id])
+
+  audioUrl             String          @map("audio_url") @db.VarChar(2048)
+  audioFileName        String         @map("audio_file_name") @db.VarChar(255)
+
+  lyrics               String?         @db.Text
+
+  signLanguageVideoUrl String?         @map("sign_language_video_url") @db.VarChar(2048)
+  signLanguageFileName String?         @map("sign_language_file_name") @db.VarChar(255)
+
+  brailleFileUrl       String?         @map("braille_file_url") @db.VarChar(2048)
+  brailleFileName      String?         @map("braille_file_name") @db.VarChar(255)
+
+  createdAt            DateTime        @default(now()) @map("created_at")
+  updatedAt            DateTime        @updatedAt @map("updated_at")
+
+  trackReleases        TrackRelease[]  @relation("track")
+  trackTags            TrackTag[]     
+  trackPlayLists       TrackPlayList[] @relation("track")
+  editorPlayLists      EditorPlaylistTrack[]
+  trackStreams         TrackStream[]
+
+  @@index([slug], map: "track_slug_idx")
+  @@map("tracks")
+}

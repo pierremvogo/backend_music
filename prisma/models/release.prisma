@@ -1,0 +1,40 @@
+enum ReleaseStatus {
+  DRAFT  //En cours de crétation, pas encore soumise
+  PENDING // Soumise, en attente de validation/modération
+  APPROVED //Validée, prête à etre publiée
+  REJECTED //refusée (avec raison)
+  PUBLISHED //Visible publiquement
+  SHEDULED //Approuvée mais publication programée à une date future
+  UNPUBLISHED // Retirée de la publication
+}
+model Release {
+  id         String          @id @default(cuid()) @db.VarChar(32)
+
+  userId     String           @map("artist_id") @db.VarChar(32)
+  user       User             @relation("user",fields: [userId], references: [id])
+
+  album      Album?          
+  ep         Ep ?           
+  single     Single?
+  
+  title        String         @db.VarChar(256)
+  slug         String         @unique(map: "album_slug_idx") @db.VarChar(256)
+  duration     Float?         @default(0)
+  coverUrl     String         @map("cover_url") @db.VarChar(256)
+  coverFileName               String   @map("cover_file_name") @db.VarChar(255)
+  releaseDate  String         @map("release_date") @db.VarChar(256)
+  description  String?        @db.VarChar(256)
+  label        String         @db.VarChar(256)
+  releaseType  String         @map("release_type") @db.VarChar(256)
+  format       String         @db.VarChar(256)
+  upcCode      String         @map("upc_code") @db.VarChar(256)
+  status       ReleaseStatus  @default(DRAFT)
+
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+
+  trackReleases TrackRelease[]  @relation("release_track")
+  releaseTags   ReleaseTag[]    @relation("release_tag")
+
+  @@map("release")
+}

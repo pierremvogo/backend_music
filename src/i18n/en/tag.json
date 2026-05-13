@@ -1,0 +1,12 @@
+{
+  "TAG_ALREADY_EXIST": "An tag with this name already exists",
+  "ERROR_CREATED_TAG": "Error occurred when creating tag",
+  "SUCCESSFULLY_CREATED_TAG": "Tag created successfully",
+  "NO_TAG_FOUND": "No Tag Found",
+  "TAG_NOT_FOUND": "Tag Not found",
+  "SUCCESSFULLY_GET_ALL_TAG": "Successfully get all tag",
+  "SUCCESSFULLY_GET_TAG": "Successfully get tag",
+  "NO_TAG_ID_GIVEN": "No Tag Id given",
+  "TAG_NAME_REQUIRED": "Tag name is required for update.",
+  "SUCCESSFULLY_DELETE_TAG": "Tag deleted successfully."
+}

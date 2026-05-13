@@ -1,0 +1,24 @@
+model Plan {
+  id              String    @id @default(cuid()) @db.VarChar(32)
+  artistId        String    @map("artist_id") @db.VarChar(32)
+  artist          User      @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  name            String    @db.VarChar(100)
+  description     String?   @db.Text
+  price           Decimal   @db.Decimal(10, 2)
+  currency        String    @default("EUR") @db.VarChar(10)
+  billingCycle    String    @map("billing_cycle") @db.VarChar(20)
+  trialDays       Int       @default(0) @map("trial_days")
+  stripeProductId String?   @map("stripe_product_id") @db.VarChar(64)
+  stripePriceId   String?   @unique(map: "plans_stripe_price_unique") @map("stripe_price_id") @db.VarChar(64)
+  active          Boolean   @default(true)
+
+
+
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  @@unique([artistId, billingCycle], map: "unique_artist_cycle")
+  @@index([artistId], map: "plans_artist_id_idx")
+  @@map("plans")
+}

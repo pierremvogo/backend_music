@@ -1,0 +1,9 @@
+model Order {
+  id                   String   @id @default(cuid())
+  paymentId            String?   @unique
+  status               String
+  createdAt            DateTime @default(now())
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  payment  Payment?  @relation(fields: [paymentId], references: [id])
+}

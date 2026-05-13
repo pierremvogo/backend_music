@@ -1,0 +1,28 @@
+model ArtistPayoutSettings {
+  id                 String   @id @db.VarChar(32)
+  userId             String   @unique @map("user_id") @db.VarChar(32)
+
+  // --- Bank ---
+  bankAccountHolder  String?  @map("bank_account_holder") @db.VarChar(256)
+  bankName           String?  @map("bank_name") @db.VarChar(256)
+  accountNumber      String?  @map("account_number") @db.VarChar(128)
+  routingNumber      String?  @map("routing_number") @db.VarChar(64)
+  swiftCode          String?  @map("swift_code") @db.VarChar(32)
+  iban               String?  @db.VarChar(64)
+
+  // --- Digital ---
+  paypalEmail        String?  @map("paypal_email") @db.VarChar(256)
+  bizumPhone         String?  @map("bizum_phone") @db.VarChar(64)
+
+  mobileMoneyProvider String? @map("mobile_money_provider") @db.VarChar(64)
+  mobileMoneyPhone    String? @map("mobile_money_phone") @db.VarChar(64)
+  orangeMoneyPhone    String? @map("orange_money_phone") @db.VarChar(64)
+
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  artist             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "artist_payout_settings_artist_idx")
+  @@map("artist_payout_settings")
+}

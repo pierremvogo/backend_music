@@ -1,0 +1,71 @@
+enum Role {
+  ADMIN  
+  ARTIST 
+  FAN 
+  USER
+  EDITOR
+}
+model User {
+  id                    String   @id @default(cuid()) @db.VarChar(32)
+
+  name                  String?   @db.VarChar(256)
+  surname               String?   @db.VarChar(256)
+
+  videoIntroUrl         String?  @db.VarChar(512)
+  videoIntroFileName    String?  @map("videoIntro_file_name") @db.VarChar(255)
+
+  miniVideoLoopUrl      String?  @db.VarChar(512)
+  miniVideoLoopFileName String?  @map("miniVideoLoop_file_name") @db.VarChar(255)
+
+  username              String?  @db.VarChar(256)
+
+  email                 String   @unique(map: "email_idx") @db.VarChar(256)
+  password              String   @db.VarChar(256)
+
+  profileImageUrl       String?  @db.VarChar(512)
+  profileImageFileName  String?  @map("profileImage_file_name") @db.VarChar(255)
+
+  role                  Role     @default(USER)
+  isSubscribed          Boolean  @default(false)
+
+  artistName            String?  @db.VarChar(256)
+  genre                 String?  @db.VarChar(256)
+
+  bio                   String?  @db.VarChar(1024)
+  country               String?  @db.VarChar(128)
+
+  twoFactorEnabled      Boolean  @default(false)
+
+  emailVerificationToken String? @db.VarChar(256)
+  emailVerified         Boolean  @default(false)
+  emailTokenExpiresAt   DateTime?
+
+
+  passwordResetTokenHash   String? @db.VarChar(256)
+  passwordResetExpiresAt   DateTime?
+
+
+  createdAt             DateTime @default(now()) @map("created_at")
+  updatedAt             DateTime @updatedAt @map("updated_at")
+  
+  releases              Release[]  @relation("user")
+  playlists             Playlist[]
+  payments              Payment[]
+  plans                 Plan[]
+  userTags              UserTag[]
+  tracks                Track[]
+  artistPayoutSettings  ArtistPayoutSettings[]
+  editorPlaylist        EditorPlaylist[]
+  editorPlaylistTrack   EditorPlaylistTrack[]
+  royaltyPayouts        RoyaltyPayout[]
+  trackStreams          TrackStream[]
+  transactions          Transaction[]
+  subscriptions         Subscription[]
+
+  @@map("users")
+ 
+}
+
+
+
+

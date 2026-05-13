@@ -1,0 +1,11 @@
+model Mood {
+  id        String   @id @default(cuid()) @db.VarChar(32)
+  name      String   @unique @db.VarChar(256)
+  slug      String?  @unique(map: "mood_slug_idx") @db.VarChar(256)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  track     Track[]
+
+  @@map("mood")
+}
