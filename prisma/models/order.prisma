@@ -6,4 +6,5 @@ model Order {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   payment  Payment?  @relation(fields: [paymentId], references: [id])
+  @@map("order")
 }

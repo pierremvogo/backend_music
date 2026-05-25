@@ -11,6 +11,7 @@ model Payment {
 
   user  User  @relation(fields: [userId], references: [id])
   order Order?
+  @@map("payment")
 }
 
 enum PaymentStatus {
